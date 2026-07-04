@@ -4,7 +4,9 @@ VS Code extension that copies selected code with file and line-number context as
 
 ## Command
 
-`Copy with context` appears in the editor context menu when text is selected.
+`Copy with context` appears in the editor context menu, VS Code code-action list, hover popup, and status bar when text is selected.
+
+The default keybinding is `Ctrl+Alt+Z`.
 
 The copied format is:
 
