@@ -1,0 +1,50 @@
+{
+  "name": "copy-with-context",
+  "displayName": "Copy with Context",
+  "description": "Copy selected code with file and line-number context in Markdown format.",
+  "version": "0.0.1",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.copyWithContext",
+        "title": "Copy with context",
+        "category": "Editor"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "extension.copyWithContext",
+          "when": "editorHasSelection",
+          "group": "9_cutcopypaste"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "extension.copyWithContext",
+        "key": "ctrl+alt+z",
+        "when": "editorTextFocus && editorHasSelection"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/vscode": "^1.90.0",
+    "@vscode/vsce": "^3.9.2",
+    "typescript": "^5.4.5"
+  }
+}
